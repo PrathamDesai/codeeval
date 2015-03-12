@@ -1,3 +1,16 @@
+
+clean-php:
+	rm -rf composer.phar composer.lock vendor
+
+clean-js:
+	rm -rf node_modules
+
+clean-sh:
+	rm -rf shunit2
+
+clean-py:
+	rm -rf pip
+
 setup-php:
 	php -r "readfile('https://getcomposer.org/installer');" | php
 	php composer.phar install
