@@ -1,4 +1,5 @@
 while read line; do
-    output=`echo $line | tr " " "\n" | tac | tr "\n" " "`
+    cmd=`command -v tac >/dev/null 2>&1 && echo "tac" || echo "tail -r"`
+    output=`echo $line | tr " " "\n" | $cmd | tr "\n" " "`
     echo ${output% }
 done < $1
