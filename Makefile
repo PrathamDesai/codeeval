@@ -15,6 +15,9 @@ setup-sh:
 	rm shunit2-2.1.6.tgz
 	mv shunit2-2.1.6 shunit2
 
+setup-py:
+	pip install --root pip -r requirements.txt
+
 test-php:
 	php vendor/bin/phpunit --configuration phpunit.xml
 
@@ -26,3 +29,7 @@ test-js:
 
 test-sh:
 	find */*/test.sh | while read file; do sh $${file}; done
+
+test-py:
+	PYTHONPATH=./pip/usr/local/lib/python2.7/dist-packages \
+		pip/usr/local/bin/nosetests */*/test.py
