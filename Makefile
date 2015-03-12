@@ -1,3 +1,6 @@
+clean: clean-php clean-js clean-sh clean-py
+setup: setup-php setup-ruby setup-js setup-sh setup-py
+test: test-php test-ruby test-js test-sh test-py
 
 clean-php:
 	rm -rf composer.phar composer.lock vendor
