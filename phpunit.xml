@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<phpunit>
+    <testsuites>
+        <testsuite name="all">
+            <filter>
+                <whitelist>
+                    <directory suffix="test.php">easy/*</directory>
+                </whitelist>
+            </filter>
+        </testsuite>
+    </testsuites>
+</phpunit>
