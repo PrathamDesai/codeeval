@@ -1,17 +1,13 @@
-var assert = require('assert');
-
-function generate_output(callback) {
-    command = 'node '+__dirname+'/solution.js';
-    require('child_process').exec(command, callback).toString();
-}
+var assert          = require('assert');
+var helpers         = require('../../support/helpers');
+var runSolution     = helpers.runSolution;
 
 describe('sum-of-primes', function () {
     it('should sum the first 1000 prime numbers', function (done) {
-
-        generate_output(function (err, generated) {
-            assert.equal('3682913', generated);
+        runSolution(__dirname, function (generated) {
+            expected = '3682913';
+            assert.equal(expected, generated);
             done();
         });
-
     });
 });
