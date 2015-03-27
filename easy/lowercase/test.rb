@@ -1,14 +1,10 @@
 require 'test/unit'
+require './support/helpers'
 
 class LowercaseTest < Test::Unit::TestCase
-
-  def test_lowercase
-    dir = File.dirname(__FILE__)
-
-    generated = `ruby #{dir}/solution.rb #{dir}/input_sample.txt`
-    expected  = File.read("#{dir}/output_sample.txt")
-
+  def test_solution
+    generated = run_solution(__FILE__)
+    expected  = get_output_sample(__FILE__)
     assert_equal(expected, generated)
   end
-
 end
