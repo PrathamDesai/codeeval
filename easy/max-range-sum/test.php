@@ -1,12 +1,12 @@
 <?php
-class MaxRangeSumTest extends PHPUnit_Framework_TestCase {
+require_once 'support/helpers.php';
 
-    public function testMultiplesOfANumber() {
-        $dir = __DIR__;
-
-        $generated = `php $dir/solution.php $dir/input_sample.txt`;
-        $expected  = file_get_contents("$dir/output_sample.txt");
-
+class MaxRangeSumTest extends PHPUnit_Framework_TestCase
+{
+    public function testSolution()
+    {
+        $generated = runSolution(__DIR__);
+        $expected  = getOutputSample(__DIR__);
         $this->assertEquals($expected, $generated);
     }
 }

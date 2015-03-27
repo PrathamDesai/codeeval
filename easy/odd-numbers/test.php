@@ -1,12 +1,12 @@
 <?php
-class OddNumbersTest extends PHPUnit_Framework_TestCase {
+require_once 'support/helpers.php';
 
-    public function testOddNumbers() {
-        $dir = __DIR__;
-
-        $generated = `php $dir/solution.php`;
-        $expected  = file_get_contents("$dir/output_sample.txt");
-
+class OddNumbersTest extends PHPUnit_Framework_TestCase
+{
+    public function testSolution()
+    {
+        $generated = runSolution(__DIR__);
+        $expected  = getOutputSample(__DIR__);
         $this->assertEquals($expected, $generated);
     }
 }

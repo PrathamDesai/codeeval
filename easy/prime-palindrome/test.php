@@ -1,12 +1,12 @@
 <?php
-class PrimePalindromeTest extends PHPUnit_Framework_TestCase {
+require_once 'support/helpers.php';
 
-    public function testPrimePalindrome() {
-        $dir = __DIR__;
-
-        $generated = `php $dir/solution.php`;
+class PrimePalindromeTest extends PHPUnit_Framework_TestCase
+{
+    public function testSolution()
+    {
+        $generated = runSolution(__DIR__);
         $expected  = '929';
-
         $this->assertEquals($expected, $generated);
     }
 }
