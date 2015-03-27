@@ -1,13 +1,11 @@
 import unittest
-from os import path
-from commands import getoutput as out
+import sys
+sys.path.append('./support')
+from helpers import run_solution
 
 class PrimePalindromeTest(unittest.TestCase):
 
-    def test_sum_of_primes(self):
-        d = path.dirname(path.realpath(__file__))
-
-        generated = out("python %s/solution.py" % d)
+    def test_solution(self):
+        generated = run_solution(__file__)
         expected  = '929'
-
         self.assertEqual(expected, generated)

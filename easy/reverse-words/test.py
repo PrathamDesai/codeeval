@@ -1,13 +1,11 @@
 import unittest
-from os import path
-from commands import getoutput as out
+import sys
+sys.path.append('./support')
+from helpers import run_solution, get_output_sample
 
 class ReverseWordsTest(unittest.TestCase):
 
-    def test_reverse_words(self):
-        d = path.dirname(path.realpath(__file__))
-
-        generated = out("python %s/solution.py %s/input_sample.txt" % (d,d))
-        expected  = open("%s/output_sample.txt" % d).read()
-
+    def test_solution(self):
+        generated = run_solution(__file__)
+        expected  = get_output_sample(__file__)
         self.assertEqual(expected, generated)
